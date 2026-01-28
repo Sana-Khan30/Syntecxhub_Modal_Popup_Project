@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Modal Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Connect with Us</h1>
+        <p>Experience a seamless, accessible modal built with native web APIs.</p>
+        <button id="open-modal-btn" class="primary-btn">
+            Get Started
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </button>
+    </main>
+
+    <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+    <dialog id="modal" class="modal">
+        <div class="modal-wrapper">
+            <button id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Let's Talk</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form id="modal-form" class="modal-form" novalidate>
+                <div class="form-control">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <span id="name-error" class="error-message"></span>
+                </div>
+
+                <div class="form-control">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <span id="email-error" class="error-message"></span>
+                </div>
+
+                <div class="form-control">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="How can we help?" rows="4" required></textarea>
+                    <span id="message-error" class="error-message"></span>
+                </div>
+
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    <span>Send Message</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
